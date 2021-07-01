@@ -1,3 +1,6 @@
+from ..doubly_linked_base.empty import Empty
+
+
 class ArrayQueue:
     """FIFO queue implementation using a Python list as underlying storage."""
     DEFAULT_CAPACITY = 10 # Moderate capacity for all new queues
@@ -51,12 +54,3 @@ class ArrayQueue:
             self._data[k] = old[walk]       # Intentionally shift indices
             walk = (1 + walk) % len(old)    # Use old size as modulus
         self._front = 0                     # Front has been realigned
-
-
-
-def main():
-    pass
-
-
-if __name__ == '__main__':
-    main()
