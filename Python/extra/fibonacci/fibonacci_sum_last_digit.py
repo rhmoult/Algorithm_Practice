@@ -2,6 +2,7 @@
 import sys
 
 def fibonacci_sum_fast(num):
+    # TODO: Make it take less time
     if num < 2:
         return num
     else:
