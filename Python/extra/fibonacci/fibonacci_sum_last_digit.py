@@ -1,21 +1,20 @@
 # Uses python3
 import sys
 
-def fibonacci_sum_fast(num):
-    # TODO: Make it take less time
-    if num < 2:
-        return num
-    else:
-        previous = 0
-        current  = 1
-        sum      = 1
-        for i in range(2,num+1):
-            previous, current = current, (current + previous) % 10
-            sum += current
 
-    return sum % 10
+def fibonacci_last_digit(n):
+    current = 0
+    next = 1
+    for x in range(n):
+        oldNext = next
+        next = (current + next) % 10
+        current = oldNext
+    return current
+
 
 if __name__ == '__main__':
-    input = sys.stdin.read()
-    n = int(input)
-    print(fibonacci_sum_fast(n))
+    #input = sys.stdin.read()
+    input = "832564823476"
+    n = int(input) + 2
+    n = n % 60
+    print(str(((fibonacci_last_digit(n)) -1) % 10) )
